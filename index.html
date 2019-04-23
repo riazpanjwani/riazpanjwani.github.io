@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="Resources/CSS/style.css" />
+    <script src="Resources/JavaScript/logger.js"></script>
+    <script
+    src="http://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+    <script src="Resources/JavaScript/oxpddeviceinfo-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/oxpddiscovery-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/oxpdprint-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/oxpdscan-2.0.0.min.js"></script>
+    <script src="Resources/JavaScript/main.js"></script>
+</head>
+
+<body>
+  <h1>JS Test App</h1>
+    <div id="button_window">
+        <input class="button" type="button" value="Send Print Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/test_page.txt');" />
+        <input class="button" type="button" value="Send Large Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/keep_reinventing.pdf');" />
+        <input class="button" type="button" value="Close" onclick="window.close();" />
+    </div>
+    <div class="status_bar"></div>
+</body>
+
+</html>

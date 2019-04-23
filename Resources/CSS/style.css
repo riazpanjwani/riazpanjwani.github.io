@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input[type='button'] {
+    background-color: cornflowerblue;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+#button_window {
+    position: fixed;
+    top: 25%;
+    left: 35%;
+    display: block;
+}
+
+.button {
+    height: 40px;
+    width: 200px;
+    display: block;
+}
+
+.disabled {
+    background-color: gainsboro;
+}
+
+.status_bar {
+    background-color: grey;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
