@@ -18,13 +18,51 @@
 <!--*************************************************************************-->
 
 <body>
-  <h1>JS Test App</h1>
-    <div id="button_window">
-        <input class="button" type="button" value="Send Print Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/test_page.txt');" />
-        <input class="button" type="button" value="Send Large Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/keep_reinventing.pdf');" />
-        <input class="button" type="button" value="Close" onclick="window.close();" />
+
+  <!--TITLE-->
+  <h1>Digital Label App</h1>
+
+  <!--BUTTON ROW-->
+  <div class="buttonrow">
+    <div class="column">
+      <input class="button" type="button" value="Send Print Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/test_page.txt');" />
     </div>
-    <div class="status_bar"></div>
+    <div class="column">
+      <!--<input class="button" type="button" value="Send Large Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/keep_reinventing.pdf');" />-->
+      <input class="button" type="button" value="Send Large Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/keep_reinventing.pdf');" />
+    </div>
+    <div class="column">
+      <input class="button" type="button" value="Close" onclick="window.close();" />
+    </div>
+  </div>
+
+  <!--DEVICE INFO TABLE-->
+  <table>
+    <th>Property</th>
+    <th>Device Info</th>
+    <tr>
+      <td>Model: </td>
+    </tr>
+    <tr>
+      <td>Hostname: </td>
+    </tr>
+    <tr>
+      <td>Network Address: </td>
+    </tr>
+    <tr>
+      <td>Firmware Version: </td>
+    </tr>
+    <tr>
+      <td>Device ID: </td>
+    </tr>
+    <tr>
+      <td>Serial Number: </td>
+    </tr>
+  </table>
+
+  <!--STATUS BAR-->
+  <div class="status_bar"></div>
+
 </body>
 
 </html>
