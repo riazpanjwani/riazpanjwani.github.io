@@ -9,22 +9,61 @@ var main = function () {
 
         var futureTree = oxpddiscovery.GetOXPdDiscoveryTree();
 
-        futureTree.then(
-            function (tree) {
-                try {
-                    oxpdprint.Setup(tree);
-                    console.log("Ready");
-                } catch (error) {
-                    console.error(error);
+        futureTree.then(function(discoveryTree)
+        {
+          try
+          {
+            oxpddeviceinfo.Setup(discoveryTree);
+            oxpddeviceinfo.GetManufacturerInfo()
+              .then(function(deviceinfo)
+              {
+                try
+                {
+                  oxpddeviceinfo.GetManufacturerInfo();
+                  document.getElementById("serialnumber").innerHTML = deviceinfo.deviceSerialNumber;
+                  document.getElementById("hostname").innerHTML = deviceinfo.hostName;
+                  document.getElementById("firmware").innerHTML = deviceinfo.firmwareVersion;
+				          document.getElementById("model").innerHTML = deviceinfo.modelName;
+				          document.getElementById("network").innerHTML = deviceinfo.ipAddress;
+				          document.getElementById("productnum").innerHTML = deviceinfo.productNumber;
+				          document.getElementById("mac").innerHTML = deviceinfo.macAddress;
+				          console.log("Ready");
                 }
-            },
-            function (error) {
-                console.error(error);
+                catch(err)
+                {
+                  console.log('ManufacturerInfo: ' + 'err.name="' + err.name + '", ' + 'err.message="' + err.message);
+                }
+              }
+              );
             }
+            catch(err)
+            {
+              console.log('DiscoveryTree: ' + 'err.name="' + err.name + '", ' + 'err.message="' + err.message);
+            }
+          }
         );
     };
 
     instance.print = function (document_location) {
+
+		/*var ip = "localhost";
+		oxpddiscovery.Setup(ip);
+		var printTree = oxpddiscovery.GetOXPdDiscoveryTree();
+
+		//Setup OXPd Print
+		printTree.then(
+			function (tree) {
+				try{
+					oxpdprint.Setup(tree, ip);
+					console.log("Initializing printer...");
+				} catch {
+					console.error(error);
+				}
+			},
+			function(error){
+				console.error(error);
+			}
+		);*/
         // Submit the print job
         var futurePrint = oxpdprint.PrintUri({
             documentUri: document_location

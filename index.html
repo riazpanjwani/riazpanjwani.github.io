@@ -20,7 +20,7 @@
 <body>
 
   <!--TITLE-->
-  <h1>Digital Label App</h1>
+  <h1>HP Inc. Digital Label</h1>
 
   <!--BUTTON ROW-->
   <div class="buttonrow">
@@ -29,7 +29,7 @@
     </div>
     <div class="column">
       <!--<input class="button" type="button" value="Send Large Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/keep_reinventing.pdf');" />-->
-      <input class="button" type="button" value="Send Large Job" onclick="main.print('http://d1dt3lk9ptjcdc.cloudfront.net/examples/sample-documents/keep_reinventing.pdf');" />
+      <input class="button" type="button" value="Get Information" onclick="window.location.reload(true);" />
     </div>
     <div class="column">
       <input class="button" type="button" value="Close" onclick="window.close();" />
@@ -42,21 +42,31 @@
     <th>Device Info</th>
     <tr>
       <td>Model: </td>
+      <td><span id = "model"></td>
     </tr>
     <tr>
       <td>Hostname: </td>
+      <td><span id = "hostname"></td>
     </tr>
     <tr>
       <td>Network Address: </td>
+      <td><span id = "network"></td>
+    </tr>
+	  <tr>
+      <td>MAC Address: </td>
+      <td><span id = "mac"></td>
     </tr>
     <tr>
       <td>Firmware Version: </td>
+      <td><span id = "firmware"></td>
     </tr>
-    <tr>
-      <td>Device ID: </td>
-    </tr>
+	  <tr>
+	  <td>Product Number: </td>
+      <td><span id = "productnum"></td>
+	  </tr>
     <tr>
       <td>Serial Number: </td>
+      <td><span id = "serialnumber"></td>
     </tr>
   </table>
 
