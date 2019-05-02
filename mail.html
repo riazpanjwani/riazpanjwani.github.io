@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="contact form example">
+  <title>Email Device Information</title>
+</head>
+
+<body>
+  <h2 class="content-head">Email Device Information</h2>
+
+<!-- START HERE -->
+   <link rel="stylesheet" href="Resources/CSS/pure.css">
+   <link rel="stylesheet" href="Resources/CSS/emailstyle.css">
+
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+  action="https://script.google.com/macros/s/AKfycbzDGZqxqfDnE4K9uQWhO8s_mISS72K6epLfvQdieqlOn2NdT5o/exec">
+    <!-- This form and the google script can be found on the HP Digital Label google Drive account -->
+    <!-- Username: hpdigitallabel@gmail.com Password: hpoxpd2019 -->
+    <!--Open HP Digital Label Email Back End sheet, click tools, then click script editor to access code-->
+    <!--Please note that there is a 100 emails per day limit. Will need to use a paid service if more emails are required-->
+
+    <div class="form-elements">
+      <fieldset class="pure-group">
+        <label for="name">Name: </label>
+        <input id="name" name="name" placeholder="Change this to message" />
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="10"
+        placeholder="This will become the deviceinfo section"></textarea>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" value=""
+        required placeholder="your.name@email.com"/>
+        <span class="email-invalid" style="display:none">
+          Must be a valid email address</span>
+      </fieldset>
+
+      <button> Send</button>
+    </div>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div class="thankyou_message" style="display:none;">
+      <h2>Your email has been successfully sent.</h2>
+    </div>
+
+    <a href="index.html"><input class="button" type="button" value="Go Home" /></a>
+
+  </form>
+
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script data-cfasync="false" type="text/javascript"
+  src="Resources/JavaScript/formhandler.js"></script>
+<!-- END -->
+
+</body>
+</html>

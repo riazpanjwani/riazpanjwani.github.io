@@ -12,6 +12,10 @@ input[type='button'] {
     font-size: 20px;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 h1 {
   padding-left: 15px
 }
