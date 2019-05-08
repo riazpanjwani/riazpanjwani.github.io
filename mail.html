@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="contact form example">
+    <meta name="description" content="email device information">
   <title>Email Device Information</title>
 </head>
 
@@ -14,6 +14,18 @@
    <link rel="stylesheet" href="Resources/CSS/pure.css">
    <link rel="stylesheet" href="Resources/CSS/emailstyle.css">
 
+   <!-- <script src="Resources/JavaScript/logger.js"></script>
+   <script
+   src="http://code.jquery.com/jquery-1.12.4.min.js"
+   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+   crossorigin="anonymous"></script>
+   <script src="Resources/JavaScript/oxpddeviceinfo-2.0.0.min.js"></script>
+   <script src="Resources/JavaScript/oxpddiscovery-2.0.0.min.js"></script>
+   <script src="Resources/JavaScript/oxpdprint-2.0.0.min.js"></script>
+   <script src="Resources/JavaScript/oxpdscan-2.0.0.min.js"></script>
+   <script src="Resources/JavaScript/main.js"></script>
+   <script src="Resources/JavaScript/emaildeviceinfo.js"></script> -->
+
   <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
   action="https://script.google.com/macros/s/AKfycbzDGZqxqfDnE4K9uQWhO8s_mISS72K6epLfvQdieqlOn2NdT5o/exec">
     <!-- This form and the google script can be found on the HP Digital Label google Drive account -->
@@ -21,16 +33,50 @@
     <!--Open HP Digital Label Email Back End sheet, click tools, then click script editor to access code-->
     <!--Please note that there is a 100 emails per day limit. Will need to use a paid service if more emails are required-->
 
+    <!-- <table>
+      <th>Property</th>
+      <th>Device Info</th>
+      <tr>
+        <td>Model: </td>
+        <td><span id = "model"></td>
+      </tr>
+      <tr>
+        <td>Hostname: </td>
+        <td><span id = "hostname"></td>
+      </tr>
+      <tr>
+        <td>Network Address: </td>
+        <td><span id = "network"></td>
+      </tr>
+      <tr>
+        <td>MAC Address: </td>
+        <td><span id = "mac"></td>
+      </tr>
+      <tr>
+        <td>Firmware Version: </td>
+        <td><span id = "firmware"></td>
+      </tr>
+      <tr>
+      <td>Product Number: </td>
+        <td><span id = "productnum"></td>
+      </tr>
+      <tr>
+        <td>Serial Number: </td>
+        <td><span id = "serialnumber"></td>
+      </tr>
+    </table> -->
+
     <div class="form-elements">
       <fieldset class="pure-group">
-        <label for="name">Name: </label>
+        <label for="name">Message </label>
         <input id="name" name="name" placeholder="Change this to message" />
       </fieldset>
 
       <fieldset class="pure-group">
-        <label for="message">Message: </label>
+        <label for="message">Device Information: </label>
         <textarea id="message" name="message" rows="10"
-        placeholder="This will become the deviceinfo section"></textarea>
+        placeholder="This will become the deviceinfo section">
+Model: &#13;&#10;Hostname: &#13;&#10;Network Address: &#13;&#10;MAC Address: &#13;&#10;Firmware Version: &#13;&#10;Product Number: &#13;&#10;Serial Number: </textarea>
       </fieldset>
 
       <fieldset class="pure-group">
@@ -42,6 +88,7 @@
       </fieldset>
 
       <button> Send</button>
+
     </div>
 
     <!-- Customise the Thankyou Message People See when they submit the form: -->

@@ -1,3 +1,5 @@
+var serial, host, os, mod, ip, prod, mac = "N/A";
+
 var main = function () {
     var instance = {};
 
@@ -20,14 +22,39 @@ var main = function () {
                 try
                 {
                   oxpddeviceinfo.GetManufacturerInfo();
-                  document.getElementById("serialnumber").innerHTML = deviceinfo.deviceSerialNumber;
-                  document.getElementById("hostname").innerHTML = deviceinfo.hostName;
-                  document.getElementById("firmware").innerHTML = deviceinfo.firmwareVersion;
-				          document.getElementById("model").innerHTML = deviceinfo.modelName;
-				          document.getElementById("network").innerHTML = deviceinfo.ipAddress;
-				          document.getElementById("productnum").innerHTML = deviceinfo.productNumber;
-				          document.getElementById("mac").innerHTML = deviceinfo.macAddress;
-				          console.log("Ready");
+                  serial = deviceinfo.deviceSerialNumber;
+                  host = deviceinfo.hostName;
+                  os = deviceinfo.firmwareVersion;
+                  mod = deviceinfo.modelName;
+                  ip = deviceinfo.ipAddress;
+                  prod = deviceinfo.productNumber;
+                  mac = deviceinfo.macAddress;
+
+                  document.getElementById("serialnumber").innerHTML = serial;
+                  document.getElementById("hostname").innerHTML = host;
+                  document.getElementById("firmware").innerHTML = os;
+                  document.getElementById("model").innerHTML = mod;
+                  document.getElementById("network").innerHTML = ip;
+                  document.getElementById("productnum").innerHTML = prod;
+                  document.getElementById("mac").innerHTML = mac;
+
+                  //host = String(deviceinfo.hostName); //test with String conversion
+                  //serial = deviceinfo.deviceSerialNumber; //test without String conversion
+                  localStorage.setItem("serialprint", serial);
+                  console.log("STORING SERIAL: " + serial);
+                  localStorage.setItem("hostprint", host);
+                  console.log("STORING HOST: " + host);
+                  localStorage.setItem("osprint", os);
+                  console.log("STORING FIRMWARE: " + os);
+                  localStorage.setItem("modprint", mod);
+                  console.log("STORING MODEL: " + mod);
+                  localStorage.setItem("ipprint", ip);
+                  console.log("STORING NETWORK: " + ip);
+                  localStorage.setItem("prodprint", prod);
+                  console.log("STORING PRODUCT: " + prod);
+                  localStorage.setItem("macprint", mac);
+                  console.log("STORING MAC: " + mac);
+                  console.log("Ready");
                 }
                 catch(err)
                 {
